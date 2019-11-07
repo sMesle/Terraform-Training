@@ -2,10 +2,11 @@
 
 ## Prerequisite
 - A ressource group in Azure
+- A file with your azure credentials
 
 `` Main.tf ``
 
-```hcl-terraform
+```hcl
 data "azurerm_resource_group" "ImportedRG" {
   #Change to your Ressource group name created
   name = "TerraformRGDevo"
@@ -36,7 +37,7 @@ resource "azurerm_subnet" "TerraSubnetDevo" {
 
 ``Variables.tf``
 
-```hcl-terraform
+```hcl
 #Always tag your ressource is a good practice :)
 
 variable "EnvironmentTag" {

@@ -1,0 +1,5 @@
+01 Introduction-Terraform/variable.tf
+.terraform/
+.idea/
+terraform.tfstate
+terraform.tfstate.backup

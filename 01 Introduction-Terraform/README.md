@@ -2,12 +2,12 @@
 
 This folder show you how to configure terraform to use it in Azure
 
-##Prerequisites
+## Prerequisites
 - Terraform
 - Your favorite IDE
 - An azure account
 
-##Tutorial
+## Tutorial
 
 Create 3 files as follow :
 - ```00 auth.tf``` : Have the credential of your azure
@@ -15,7 +15,7 @@ Create 3 files as follow :
 - ```01 ressource_group.tf``` : It will create an ressource group in Azure
 
 In ``00 auth.tf`` :
-```
+```hcl
 provider "azurerm" {
   # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
   version = "=1.36.0"
@@ -40,29 +40,29 @@ We will create a role for our ``azure active directory``. Search the service ``s
 Get the subscription id in ``overview``.
 
 In ``variable.tf`` :
-```
+```hcl
 variable "client_secret" {
-  default = #your client_secret generated
+  #default = your client_secret generated
 }
 
 variable "subscription_id" {
-  default = #your subscription id
+  #default = your subscription id
 }
 
 variable "tenant_id" {
-  default = #Go in your azure active directory, enterprise application, search your directory, and copy
+  #default = Go in your azure active directory, enterprise application, search your directory, and copy
             #the tenant_id here
 }
 
 variable "client_id" {
-  default = #Go in your azure active directory, enterprise application, search your directory, and copy
+  #default = Go in your azure active directory, enterprise application, search your directory, and copy
             #the client_id here
 }
 ```
 
 In ``01 ressource_group`` : 
 
-```
+```hcl
 resource "azurerm_resource_group" "Terra-RG" {
 
   name        = "RGName"
@@ -78,13 +78,13 @@ resource "azurerm_resource_group" "Terra-RG" {
 }
 ```
 
-##Testing
+## Testing
 
-``$ terraform init``
+```console
+$ terraform init
 
-``$ terraform plan``
+$ terraform plan
 
-```
 $ terraform apply
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed. 
 ```

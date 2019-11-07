@@ -3,3 +3,4 @@
 .idea/
 terraform.tfstate
 terraform.tfstate.backup
+02 Vnet-Subnet/Credentials.tf
